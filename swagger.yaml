@@ -8,11 +8,27 @@ servers:
 - url: /
 paths:
   /auth/register:
-    get:
+    post:
       tags:
       - auth
       summary: '[User] User Registration'
-      description: '[User] User Registration'
+      description: |-
+        ## Register User
+
+        This endpoint allows the user to register by providing their first name, last name, email, password, phone, and country code.
+
+        ## User/Role
+
+        user
+
+        ### Request Body
+
+        - `first_name` (string, required): The first name of the user.
+        - `last_name` (string, required): The last name of the user.
+        - `email` (string, required): The email address of the user.
+        - `password` (string, required): The password for the user account.
+        - `phone` (string, required): The phone number of the user.
+        - `country_code` (string, required): The country code for the user's phone number.
       operationId: userUserRegistration
       requestBody:
         content:
@@ -91,9 +107,6 @@ paths:
                           login_provider:
                             type: string
                             example: email
-                          password:
-                            type: string
-                            example: 1234qwerA!
                           phone:
                             type: string
                             example: '+96170987654'
@@ -130,7 +143,6 @@ paths:
                         is_verified: false
                         last_name: test
                         login_provider: email
-                        password: 1234qwerA!
                         phone: '+96170987654'
                         profile_picture: null
                         role: user
@@ -181,7 +193,7 @@ paths:
       tags:
       - farms
       summary: '[Admin] Get all farms.'
-      description: "User/Role:  \nAdmin\n\nBenefit/Value:\n\nGet all the farms created to be viewed by the admin in the dashboard."
+      description: '[Admin] Get all farms.'
       operationId: adminGetAllFarms
       parameters:
       - name: search
@@ -208,21 +220,14 @@ paths:
       tags:
       - farms
       summary: '[User] Create Farm'
-      description: "User/Role:  \nNormal User\n\nBenefit/Value:\n\nCreate a farm for the current user whose token is sent in the headers."
+      description: '[User] Create Farm'
       operationId: userCreateFarm
       requestBody:
         content:
           application/json:
-            schema:
-              type: object
-              properties:
-                data:
-                  type: string
-                  example: example
             examples:
               '[User] Create Farm':
-                value:
-                  data: example
+                value: ''
       responses:
         '200':
           description: ''
