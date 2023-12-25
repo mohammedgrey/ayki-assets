@@ -1,0 +1,82 @@
+openapi: 3.0.3
+info:
+  title: AYKI
+  description: This serves as a business and technical documentation for the AYKI API server.
+  version: 1.0.0
+  contact: {}
+servers:
+- url: /
+paths:
+  /farms:
+    get:
+      tags:
+      - farms
+      summary: '[Admin] Get all farms.'
+      description: "User/Role:  \nAdmin\n\nBenefit/Value:\n\nGet all the farms created to be viewed by the admin in the dashboard."
+      operationId: adminGetAllFarms
+      parameters:
+      - name: search
+        in: query
+        schema:
+          type: string
+          example: '""'
+      - name: size
+        in: query
+        schema:
+          type: string
+          example: '10'
+      - name: page
+        in: query
+        schema:
+          type: string
+          example: '1'
+      responses:
+        '200':
+          description: Example
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+                    example: example
+              examples:
+                Example:
+                  value:
+                    data: example
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - farms
+      summary: '[User] Create Farm'
+      description: "User/Role:  \nNormal User\n\nBenefit/Value:\n\nCreate a farm for the current user whose token is sent in the headers."
+      operationId: userCreateFarm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: string
+                  example: example
+            examples:
+              '[User] Create Farm':
+                value:
+                  data: example
+      responses:
+        '200':
+          description: ''
+      security:
+      - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+- name: farms
+- name: farm_elements
+
