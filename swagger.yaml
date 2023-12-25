@@ -7,6 +7,175 @@ info:
 servers:
 - url: /
 paths:
+  /auth/register:
+    get:
+      tags:
+      - auth
+      summary: '[User] User Registration'
+      description: '[User] User Registration'
+      operationId: userUserRegistration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                country_code:
+                  type: string
+                  example: ''
+                email:
+                  type: string
+                  example: ''
+                first_name:
+                  type: string
+                  example: ''
+                last_name:
+                  type: string
+                  example: ''
+                password:
+                  type: string
+                  example: ''
+                phone:
+                  type: string
+                  example: ''
+            examples:
+              '[User] User Registration':
+                value:
+                  country_code: ''
+                  email: ''
+                  first_name: ''
+                  last_name: ''
+                  password: ''
+                  phone: ''
+      responses:
+        '200':
+          description: '[User] User Registration (200)'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg
+                      user:
+                        type: object
+                        properties:
+                          account_status:
+                            type: string
+                            example: active
+                          country_code:
+                            type: string
+                            example: LB
+                          created_at:
+                            type: string
+                            example: 2023-12-25T08:30:00Z
+                          email:
+                            type: string
+                            example: test@gmail.com
+                          first_name:
+                            type: string
+                            example: test
+                          id:
+                            type: string
+                            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+                          is_verified:
+                            type: boolean
+                            example: false
+                          last_name:
+                            type: string
+                            example: test
+                          login_provider:
+                            type: string
+                            example: email
+                          password:
+                            type: string
+                            example: 1234qwerA!
+                          phone:
+                            type: string
+                            example: '+96170987654'
+                          profile_picture:
+                            nullable: true
+                            example: null
+                          role:
+                            type: string
+                            example: user
+                          updated_at:
+                            type: string
+                            example: 2023-12-25T08:30:00Z
+                  errors:
+                    nullable: true
+                    example: null
+                  message:
+                    type: string
+                    example: User registered successfully
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                '[User] User Registration (200)':
+                  value:
+                    data:
+                      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg
+                      user:
+                        account_status: active
+                        country_code: LB
+                        created_at: 2023-12-25T08:30:00Z
+                        email: test@gmail.com
+                        first_name: test
+                        id: f47ac10b-58cc-4372-a567-0e02b2c3d479
+                        is_verified: false
+                        last_name: test
+                        login_provider: email
+                        password: 1234qwerA!
+                        phone: '+96170987654'
+                        profile_picture: null
+                        role: user
+                        updated_at: 2023-12-25T08:30:00Z
+                    errors: null
+                    message: User registered successfully
+                    success: true
+        '400':
+          description: '[User] User Registration (400)'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    nullable: true
+                    example: null
+                  errors:
+                    type: object
+                    properties:
+                      email:
+                        type: object
+                        properties:
+                          code:
+                            type: string
+                            example: email_already_taken
+                          message:
+                            type: string
+                            example: The email provided is associated with another account.
+                  message:
+                    type: string
+                    example: User regisration failed
+                  success:
+                    type: boolean
+                    example: false
+              examples:
+                '[User] User Registration (400)':
+                  value:
+                    data: null
+                    errors:
+                      email:
+                        code: email_already_taken
+                        message: The email provided is associated with another account.
+                    message: User regisration failed
+                    success: false
   /farms:
     get:
       tags:
@@ -32,19 +201,7 @@ paths:
           example: '1'
       responses:
         '200':
-          description: Example
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: string
-                    example: example
-              examples:
-                Example:
-                  value:
-                    data: example
+          description: ''
       security:
       - bearerAuth: []
     post:
@@ -77,6 +234,12 @@ components:
       type: http
       scheme: bearer
 tags:
+- name: auth
+  description: The endpoints related to the user authentication (login, register, verify email, change password...etc.)
+- name: users
+  description: The endpoints related to managing the users from the admin and the user profile/preferences in the app.
 - name: farms
-- name: farm_elements
+  description: The endpoints related to the farm itself.
+- name: farm-elements
+  description: The endpoints related to the farm elements (plants and objects), their layout and rules.
 
