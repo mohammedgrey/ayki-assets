@@ -2187,9 +2187,6 @@ paths:
                           app_theme:
                             type: string
                             example: follow device
-                          data_export_format:
-                            type: string
-                            example: JSON
                           measurement_system:
                             type: string
                             example: imperial
@@ -2211,7 +2208,6 @@ paths:
                         allow_push_notifications: true
                         app_locale: ar
                         app_theme: follow device
-                        data_export_format: JSON
                         measurement_system: imperial
                     errors: null
                     message: User preferences retrieved successfully
@@ -2321,9 +2317,6 @@ paths:
                           app_theme:
                             type: string
                             example: follow device
-                          data_export_format:
-                            type: string
-                            example: JSON
                           measurement_system:
                             type: string
                             example: imperial
@@ -2345,7 +2338,6 @@ paths:
                         allow_push_notifications: true
                         app_locale: ar
                         app_theme: follow device
-                        data_export_format: JSON
                         measurement_system: imperial
                     errors: null
                     message: User preferences updated successfully
@@ -2452,6 +2444,8 @@ paths:
                   value:
                     message: Invalid query parameters
                     success: false
+      security:
+      - bearerAuth: []
     post:
       tags:
       - farms
@@ -2532,6 +2526,8 @@ paths:
                       farm_name: Farm name already exists
                     message: Farm creation failed
                     success: false
+      security:
+      - bearerAuth: []
   /farms/{farm_id}:
     get:
       tags:
@@ -2574,6 +2570,8 @@ paths:
                   value:
                     message: Farm not found
                     success: false
+      security:
+      - bearerAuth: []
     put:
       tags:
       - farms
@@ -2638,6 +2636,8 @@ paths:
                       farm_name: Farm name already exists
                     message: Farm update failed
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farms
@@ -2681,6 +2681,8 @@ paths:
                   value:
                     message: Farm not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -2764,6 +2766,8 @@ paths:
                       user_id: Invalid user ID
                     message: Failed to assign user to farm
                     success: false
+      security:
+      - bearerAuth: []
   /farm_users/{farm_id}:
     get:
       tags:
@@ -2808,6 +2812,8 @@ paths:
                   value:
                     message: Farm not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -2879,6 +2885,8 @@ paths:
                       role: Invalid role
                     message: Failed to update farm user role
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farms
@@ -2922,6 +2930,8 @@ paths:
                   value:
                     message: Farm user not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_user_id
       in: path
@@ -2993,6 +3003,8 @@ paths:
                       farm_id: Invalid farm ID
                     message: Failed to define farm boundaries
                     success: false
+      security:
+      - bearerAuth: []
   /farm_boundaries/{farm_id}:
     get:
       tags:
@@ -3033,6 +3045,8 @@ paths:
                   value:
                     message: Farm not found
                     success: false
+      security:
+      - bearerAuth: []
     put:
       tags:
       - farms
@@ -3096,6 +3110,8 @@ paths:
                       farm_id: Invalid farm ID
                     message: Failed to update farm boundaries
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farms
@@ -3139,6 +3155,8 @@ paths:
                   value:
                     message: Farm not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -3222,6 +3240,8 @@ paths:
                       property_id: Invalid property ID
                     message: Failed to add farm property
                     success: false
+      security:
+      - bearerAuth: []
   /farm_properties/{farm_id}:
     get:
       tags:
@@ -3266,6 +3286,8 @@ paths:
                   value:
                     message: Farm not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -3337,6 +3359,8 @@ paths:
                       property_id: Invalid property ID
                     message: Failed to update farm property
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farms
@@ -3380,6 +3404,8 @@ paths:
                   value:
                     message: Farm property not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: property_id
       in: path
@@ -3471,6 +3497,8 @@ paths:
                       farm_id: Invalid farm ID
                     message: Failed to create weather forecast
                     success: false
+      security:
+      - bearerAuth: []
   /farm_weather/{farm_id}:
     get:
       tags:
@@ -3515,6 +3543,8 @@ paths:
                   value:
                     message: Weather forecasts not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -3586,6 +3616,8 @@ paths:
                       weather_id: Invalid weather forecast ID
                     message: Failed to update weather forecast
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farms
@@ -3629,6 +3661,8 @@ paths:
                   value:
                     message: Weather forecast not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: weather_id
       in: path
@@ -3720,6 +3754,8 @@ paths:
                       weather_id: Invalid weather forecast ID
                     message: Failed to add weather property
                     success: false
+      security:
+      - bearerAuth: []
   /farm_weather_properties/{weather_id}:
     get:
       tags:
@@ -3764,6 +3800,8 @@ paths:
                   value:
                     message: Weather properties not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: weather_id
       in: path
@@ -3835,6 +3873,8 @@ paths:
                       weather_property_id: Invalid weather property ID
                     message: Failed to update weather property
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farms
@@ -3878,6 +3918,8 @@ paths:
                   value:
                     message: Weather property not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: weather_property_id
       in: path
@@ -3977,6 +4019,8 @@ paths:
                       property_id: Invalid property ID
                     message: Failed to add property to element farm
                     success: false
+      security:
+      - bearerAuth: []
   /element_farm_properties/{element_id}/{farm_id}:
     get:
       tags:
@@ -4021,6 +4065,8 @@ paths:
                   value:
                     message: Element farm properties not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: element_id
       in: path
@@ -4097,6 +4143,8 @@ paths:
                       property_id: Invalid element farm property ID
                     message: Failed to update element farm property
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farms
@@ -4140,6 +4188,8 @@ paths:
                   value:
                     message: Element farm property not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: property_id
       in: path
@@ -4251,6 +4301,8 @@ paths:
                       name: Element with this name already exists
                     message: Failed to create element
                     success: false
+      security:
+      - bearerAuth: []
   /elements/{element_id}:
     get:
       tags:
@@ -4315,6 +4367,8 @@ paths:
                   value:
                     message: Element not found
                     success: false
+      security:
+      - bearerAuth: []
     put:
       tags:
       - elements
@@ -4391,6 +4445,8 @@ paths:
                       name: Element with this name already exists
                     message: Failed to update element
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - elements
@@ -4434,6 +4490,8 @@ paths:
                   value:
                     message: Element not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: element_id
       in: path
@@ -4525,6 +4583,8 @@ paths:
                       property_id: Invalid property ID
                     message: Failed to add property to element
                     success: false
+      security:
+      - bearerAuth: []
   /element_properties/{element_id}:
     get:
       tags:
@@ -4569,6 +4629,8 @@ paths:
                   value:
                     message: Element properties not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: element_id
       in: path
@@ -4640,6 +4702,8 @@ paths:
                       element_property_id: Invalid element property ID
                     message: Failed to update element property
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - elements
@@ -4683,6 +4747,8 @@ paths:
                   value:
                     message: Element property not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: element_property_id
       in: path
@@ -4798,6 +4864,8 @@ paths:
                       element_id: Invalid element ID
                     message: Failed to record element age
                     success: false
+      security:
+      - bearerAuth: []
   /element_ages/{element_id}:
     get:
       tags:
@@ -4843,6 +4911,8 @@ paths:
                   value:
                     message: Element age data not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: element_id
       in: path
@@ -4946,6 +5016,8 @@ paths:
                       element_age_id: Invalid element age ID
                     message: Failed to update element age
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - elements
@@ -4989,6 +5061,8 @@ paths:
                   value:
                     message: Element age data not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: element_age_id
       in: path
@@ -5108,6 +5182,8 @@ paths:
                       farm_id: Invalid farm ID
                     message: Failed to add element to farm
                     success: false
+      security:
+      - bearerAuth: []
   /farm_elements/{farm_id}:
     get:
       tags:
@@ -5154,6 +5230,8 @@ paths:
                   value:
                     message: Farm not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -5249,6 +5327,8 @@ paths:
                       farm_element_id: Invalid farm element ID
                     message: Failed to update farm element
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farm-elements
@@ -5292,6 +5372,8 @@ paths:
                   value:
                     message: Farm element not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_element_id
       in: path
@@ -5379,6 +5461,8 @@ paths:
                       farm_element_id: Invalid farm element ID
                     message: Failed to add property to farm element
                     success: false
+      security:
+      - bearerAuth: []
   /farm_element_properties/{farm_element_id}:
     get:
       tags:
@@ -5423,6 +5507,8 @@ paths:
                   value:
                     message: Farm element properties not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_element_id
       in: path
@@ -5494,6 +5580,8 @@ paths:
                       property_id: Invalid farm element property ID
                     message: Failed to update farm element property
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - farm-elements
@@ -5537,6 +5625,8 @@ paths:
                   value:
                     message: Farm element property not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: property_id
       in: path
@@ -5588,6 +5678,8 @@ paths:
                   value:
                     message: Element types not found
                     success: false
+      security:
+      - bearerAuth: []
     post:
       tags:
       - element-types
@@ -5680,6 +5772,8 @@ paths:
                       name: Element type already exists
                     message: Failed to create element type
                     success: false
+      security:
+      - bearerAuth: []
   /element_types/{element_type_id}:
     put:
       tags:
@@ -5753,6 +5847,8 @@ paths:
                       name: Element type with this name already exists
                     message: Failed to update element type
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - element-types
@@ -5796,6 +5892,8 @@ paths:
                   value:
                     message: Element type not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: element_type_id
       in: path
@@ -5848,6 +5946,8 @@ paths:
                   value:
                     message: No equations found
                     success: false
+      security:
+      - bearerAuth: []
     post:
       tags:
       - equations
@@ -5928,6 +6028,8 @@ paths:
                       name: Equation name already exists
                     message: Failed to add equation
                     success: false
+      security:
+      - bearerAuth: []
   /equations/{equation_id}:
     put:
       tags:
@@ -5997,6 +6099,8 @@ paths:
                       equation_id: Invalid equation ID
                     message: Failed to update equation
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - equations
@@ -6040,6 +6144,8 @@ paths:
                   value:
                     message: Equation not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: equation_id
       in: path
@@ -6094,6 +6200,8 @@ paths:
                   value:
                     message: No properties found
                     success: false
+      security:
+      - bearerAuth: []
     post:
       tags:
       - properties
@@ -6186,6 +6294,8 @@ paths:
                       name: Property name already exists
                     message: Failed to define property
                     success: false
+      security:
+      - bearerAuth: []
   /properties/{property_id}:
     put:
       tags:
@@ -6271,6 +6381,8 @@ paths:
                       property_id: Invalid property ID
                     message: Failed to update property
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - properties
@@ -6314,6 +6426,8 @@ paths:
                   value:
                     message: Property not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: property_id
       in: path
@@ -6366,6 +6480,8 @@ paths:
                   value:
                     message: No property table associations found
                     success: false
+      security:
+      - bearerAuth: []
     post:
       tags:
       - properties
@@ -6450,6 +6566,8 @@ paths:
                       table: Invalid table name
                     message: Failed to create property table association
                     success: false
+      security:
+      - bearerAuth: []
   /property_tables/{property_table_id}:
     put:
       tags:
@@ -6523,6 +6641,8 @@ paths:
                       table: Invalid table name
                     message: Failed to update property table association
                     success: false
+      security:
+      - bearerAuth: []
     delete:
       tags:
       - properties
@@ -6566,6 +6686,8 @@ paths:
                   value:
                     message: Property table association not found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: property_table_id
       in: path
@@ -6629,6 +6751,8 @@ paths:
                   value:
                     message: Element not found or no recommendations available
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -6696,6 +6820,8 @@ paths:
                   value:
                     message: No data available for the provided future date
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -6755,6 +6881,8 @@ paths:
                   value:
                     message: No grow beds found
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -6816,6 +6944,8 @@ paths:
                   value:
                     message: Harvesting information not found for the specified month
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -6844,7 +6974,7 @@ paths:
                         "pathway_area": "200 sqm",
                         "total_yield": "5000 kg",
                         "water_usage": "5000 liters",
-                        "labor_hours": "100 hours",
+                        "labor_hours": "100 hours"
                         // Additional statistics...
                       }
                     }
@@ -6866,6 +6996,8 @@ paths:
                   value:
                     message: Statistics not found for the specified farm ID
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -6940,6 +7072,8 @@ paths:
                   value:
                     message: Recommended periods not found for the specified element
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -6994,6 +7128,8 @@ paths:
                   value:
                     message: Expected yield not found for the specified farm element
                     success: false
+      security:
+      - bearerAuth: []
     parameters:
     - name: farm_id
       in: path
@@ -7016,10 +7152,17 @@ tags:
 - name: users
   description: The endpoints related to managing the users from the admin and the user profile/preferences in the app.
 - name: farms
+  description: The endpoints related to the farm, farm boundaries, farm users, farm properties, farm weather, element farm properties.
 - name: elements
+  description: The endpoints related to the elements (plants/objects), element properties, and element ages.
 - name: farm-elements
+  description: The endpoints related to the farm elements and farm element properties.
 - name: element-types
+  description: The endpoints related to the element types and sub types.
 - name: equations
+  description: The endpoints related to the dynamic equations used to calculate some outputs and statistics.
 - name: properties
+  description: The endpoints related to the dynamic properties used for the tables. Each property has a list of allowed tables it can be used with.
 - name: planning
+  description: The endpoints related to the farm planning, from planning what to grow, suggesting planting and harvesting periods, getting farm statistics and productivity.
 

@@ -1672,7 +1672,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"preferences\": {\n            \"app_locale\": \"ar\",\n            \"app_theme\": \"follow device\",\n            \"allow_email_notifications\": false,\n            \"allow_push_notifications\": true,\n            \"measurement_system\": \"imperial\",\n            \"data_export_format\": \"JSON\"\n        }\n    },\n    \"errors\": null,\n    \"message\": \"User preferences retrieved successfully\"\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"preferences\": {\n            \"app_locale\": \"ar\",\n            \"app_theme\": \"follow device\",\n            \"allow_email_notifications\": false,\n            \"allow_push_notifications\": true,\n            \"measurement_system\": \"imperial\"\n        }\n    },\n    \"errors\": null,\n    \"message\": \"User preferences retrieved successfully\"\n}"
 						},
 						{
 							"name": "Get User Preferences Failure",
@@ -1766,7 +1766,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"preferences\": {\n            \"app_locale\": \"ar\",\n            \"app_theme\": \"follow device\",\n            \"allow_email_notifications\": false,\n            \"allow_push_notifications\": true,\n            \"measurement_system\": \"imperial\",\n            \"data_export_format\": \"JSON\"\n            }\n    },\n    \"errors\": null,\n    \"message\": \"User preferences updated successfully\"\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"preferences\": {\n            \"app_locale\": \"ar\",\n            \"app_theme\": \"follow device\",\n            \"allow_email_notifications\": false,\n            \"allow_push_notifications\": true,\n            \"measurement_system\": \"imperial\"\n            }\n    },\n    \"errors\": null,\n    \"message\": \"User preferences updated successfully\"\n}"
 						},
 						{
 							"name": "Update User Preferences Failure",
@@ -4334,6 +4334,37 @@
 						}
 					]
 				}
+			],
+			"description": "The endpoints related to the farm, farm boundaries, farm users, farm properties, farm weather, element farm properties.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -5368,6 +5399,37 @@
 						}
 					]
 				}
+			],
+			"description": "The endpoints related to the elements (plants/objects), element properties, and element ages.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -6059,6 +6121,37 @@
 						}
 					]
 				}
+			],
+			"description": "The endpoints related to the farm elements and farm element properties.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -6404,6 +6497,37 @@
 						}
 					]
 				}
+			],
+			"description": "The endpoints related to the element types and sub types.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -6748,6 +6872,37 @@
 							"body": "{\n    \"success\": false,\n    \"message\": \"Equation not found\"\n}"
 						}
 					]
+				}
+			],
+			"description": "The endpoints related to the dynamic equations used to calculate some outputs and statistics.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -7434,6 +7589,37 @@
 						}
 					]
 				}
+			],
+			"description": "The endpoints related to the dynamic properties used for the tables. Each property has a list of allowed tables it can be used with.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -7823,7 +8009,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"success\": true,\n  \"data\": {\n    \"planting_area\": \"1000 sqm\",\n    \"pathway_area\": \"200 sqm\",\n    \"total_yield\": \"5000 kg\",\n    \"water_usage\": \"5000 liters\",\n    \"labor_hours\": \"100 hours\",\n    // Additional statistics...\n  }\n}"
+							"body": "{\n  \"success\": true,\n  \"data\": {\n    \"planting_area\": \"1000 sqm\",\n    \"pathway_area\": \"200 sqm\",\n    \"total_yield\": \"5000 kg\",\n    \"water_usage\": \"5000 liters\",\n    \"labor_hours\": \"100 hours\"\n    // Additional statistics...\n  }\n}"
 						},
 						{
 							"name": "Farm Statistics Failure",
@@ -8013,6 +8199,37 @@
 							"body": "{\n    \"success\": false,\n    \"message\": \"Expected yield not found for the specified farm element\"\n}"
 						}
 					]
+				}
+			],
+			"description": "The endpoints related to the farm planning, from planning what to grow, suggesting planting and harvesting periods, getting farm statistics and productivity.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kJwpLbOQOIZiWhEaW5JHH1vST6vP6rFBe5gA9_ELGJg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		}
